@@ -34,10 +34,12 @@ INFO = [  # (key, value); "Languages.Real" renders the sub-key dimmed
 ]
 CONTACT = [
     ("Email", "razaminhas11@gmail.com"),
+    ("LinkedIn", "ali-raza-minhas"),
     ("GitHub", USER),
 ]
 # Buttons under the card: (label, href). Keep README.md's links in sync with this list.
 LINKS = [
+    ("LINKEDIN", "https://www.linkedin.com/in/ali-raza-minhas/"),
     ("EMAIL", "mailto:razaminhas11@gmail.com"),
     ("GITHUB", f"https://github.com/{USER}"),
 ]

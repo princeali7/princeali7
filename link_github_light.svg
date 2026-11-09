@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="509.0" height="60" viewBox="0 0 509.0 60" font-family="ConsolasFallback,Consolas,Menlo,'DejaVu Sans Mono',monospace">
+<svg xmlns="http://www.w3.org/2000/svg" width="339.3" height="60" viewBox="0 0 339.3 60" font-family="ConsolasFallback,Consolas,Menlo,'DejaVu Sans Mono',monospace">
 <style>@font-face {src: local('Consolas'); font-family: 'ConsolasFallback'; size-adjust: 109%;}
 text, tspan {white-space: pre;}
 .cursor {animation: blink 1.06s steps(1) infinite;} @keyframes blink {50% {opacity: 0;}}</style>
-<path d="M10.0 0h489.0v3h3v54h-3v3h-489.0v-3h-3v-54h3z" fill="#d0d7de" shape-rendering="crispEdges"/>
-<path d="M13.0 3h483.0v3h3v48h-3v3h-483.0v-3h-3v-48h3z" fill="#f6f8fa" shape-rendering="crispEdges"/>
-<rect x="13.0" y="54" width="483.0" height="3" fill="#bc4c00"/>
-<text x="254.5" y="36.0" font-size="18px" text-anchor="middle" fill="#24292f"><tspan fill="#bc4c00">&gt; </tspan>GITHUB<tspan class="cursor" fill="#bc4c00">_</tspan></text>
+<path d="M10.0 0h319.3333333333333v3h3v54h-3v3h-319.3333333333333v-3h-3v-54h3z" fill="#d0d7de" shape-rendering="crispEdges"/>
+<path d="M13.0 3h313.3333333333333v3h3v48h-3v3h-313.3333333333333v-3h-3v-48h3z" fill="#f6f8fa" shape-rendering="crispEdges"/>
+<rect x="13.0" y="54" width="313.3333333333333" height="3" fill="#bc4c00"/>
+<text x="169.7" y="36.0" font-size="18px" text-anchor="middle" fill="#24292f"><tspan fill="#bc4c00">&gt; </tspan>GITHUB<tspan class="cursor" fill="#bc4c00">_</tspan></text>
 </svg>
