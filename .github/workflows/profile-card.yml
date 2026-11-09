@@ -1,0 +1,52 @@
+# Daily refresh of the profile card, link buttons and Pac-Man board.
+name: Update Profile Card
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["assets/**", "tools/**", ".github/workflows/profile-card.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-card
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build card and buttons
+        env:
+          # The default token only sees public data; add a STATS_TOKEN secret
+          # (classic PAT with read:user + repo) to count private repos and commits.
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python tools/build.py
+
+      - name: Build Pac-Man board
+        uses: abozanona/pacman-contribution-graph@v5.0.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Commit if anything changed
+        run: |
+          mv dist/pacman-contribution-graph-dark.svg pacman_dark.svg
+          mv dist/pacman-contribution-graph.svg pacman_light.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- *.svg cache/stats.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh profile card"
+          git pull --rebase origin main
+          git push
